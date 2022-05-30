@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frituur Frida</title>
+    <link rel="stylesheet" th:href="@{/css/frida.css}">
+    <link rel="icon" th:href="@{/images/frida.ico}">
+</head>
+<body>
+    <h1>Frituur Frida</h1>
+    <h2>We zijn <span th:text="${openingsdag}"></span></h2>
+
+    <h2>Bereikbaarheid</h2>
+    <dl th:object="${adresgegevens}">
+        <dt>Straat</dt>
+        <dd th:text="*{straat}"></dd>
+        <dt>Huisnummer</dt>
+        <dd th:text="*{huisNr}"></dd>
+        <dt>Gemeente</dt>
+        <dd th:object="${adresgegevens.gemeente}" th:text="|*{naam} *{postCode}"></dd>
+    </dl>
+</body>
+</html>

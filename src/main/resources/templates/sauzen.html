@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onze sauzen</title>
+    <link rel="stylesheet" th:href="@{/css/frida.css}">
+    <link rel="shortcut icon" href="@{/images/frida.ico}" type="image/x-icon">
+</head>
+<body>
+<h1>Onze sauzen:</h1>
+<ul th:each="saus : ${alleSauzen}" th:object="${saus}">
+    <li th:text="*{naam}"></li>
+    <ul  th:each="ingredient : *{ingredienten}">
+        <li th:text="${ingredient}"></li>
+    </ul>
+</ul>
+</body>
+</html>
