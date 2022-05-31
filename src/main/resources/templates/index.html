@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Frituur Frida</title>
-    <link rel="stylesheet" th:href="@{/css/frida.css}">
-    <link rel="icon" th:href="@{/images/frida.ico}">
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Frituur Frida')"></head>
 <body>
+<nav th:replace="fragments::menu"></nav>
     <h1>Frituur Frida</h1>
     <h2>We zijn <span th:text="${openingsdag}"></span></h2>
 
@@ -17,7 +13,7 @@
         <dt>Huisnummer</dt>
         <dd th:text="*{huisNr}"></dd>
         <dt>Gemeente</dt>
-        <dd th:object="${adresgegevens.gemeente}" th:text="|*{naam} *{postCode}"></dd>
+        <dd th:object="${adresgegevens.gemeente}" th:text="|*{naam} *{postCode}|"></dd>
     </dl>
 </body>
 </html>
