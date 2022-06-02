@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title =${saus} ? ${saus.naam} : 'Saus niet gevonden')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+<th:block th:object="${saus}">
+    <h1 th:text="*{naam}"></h1>
+    <img th:src="@{'/images/sauzen/' + *{naam} + '.png'}" th:alt="'potje ' + *{naam} + ' saus'">
+    <ul>
+        <li>Ingredienten:</li>
+        <ul th:each="ingredient:*{ingredienten}">
+            <li th:text="${ingredient}"></li>
+        </ul>
+    </ul>
+</th:block>
+</body>
+</html>

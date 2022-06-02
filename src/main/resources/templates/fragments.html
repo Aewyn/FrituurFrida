@@ -11,4 +11,11 @@
 
         </ul>
     </nav>
+
+    <ul th:fragment="sausLijst(sauzen)" th:each="saus : ${sauzen}" th:object="${saus}">
+        <li><a th:text="*{naam}" th:href="@{/sauzen/{id}(id=*{nummer})}"></a></li>
+        <ul th:each="ingredient : *{ingredienten}">
+            <li th:text="${ingredient}"></li>
+        </ul>
+    </ul>
 </div>
