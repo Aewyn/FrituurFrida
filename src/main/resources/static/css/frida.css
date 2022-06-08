@@ -30,7 +30,7 @@ dd {
 
 label span, .fout {
     background-color: red;
-    color:white;
+    color: white;
     font-weight: bold;
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -38,7 +38,7 @@ label span, .fout {
 
 .boodschap {
     background-color: #4CAF50;
-    color:white;
+    color: white;
     font-weight: bold;
     padding: 0.5em;
 }
@@ -147,4 +147,12 @@ tr:nth-child(odd) {
 
 tr:hover {
     background-color: gold;
+}
+
+.naastMekaar {
+    padding-left: 0;
+}
+
+.naastMekaar li {
+    display: inline;
 }
