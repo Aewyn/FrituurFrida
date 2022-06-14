@@ -3,14 +3,12 @@ package com.example.frituurfrida.repositories;
 import com.example.frituurfrida.domain.Saus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.InstanceOf;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CSVSausRepositoryTest {
 
-    private CSVSausRepository csvsr;
+    private SausRepository csvsr;
 
     @BeforeEach
     void beforeEach(){
