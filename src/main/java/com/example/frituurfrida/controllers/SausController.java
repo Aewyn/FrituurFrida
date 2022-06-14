@@ -17,8 +17,12 @@ import java.util.stream.Stream;
 @Controller
 @RequestMapping("sauzen")
 public class SausController {
+    private final SausService sausService;
     private final char[] alfabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    private final SausService sausService = new SausService(new CSVSausRepository());
+    //private final SausService sausService = new SausService(new CSVSausRepository());
+    public SausController(SausService sausService){
+        this.sausService = sausService;
+    }
     @GetMapping
     private ModelAndView findAll() {
         return new ModelAndView("sauzen", "alleSauzen", sausService.findAll());
