@@ -7,6 +7,7 @@
     <nav th:fragment="menu">
         <ul>
             <li><a th:href="@{/}">Welkom</a></li>
+            <li><a th:href="@{/snacks}">Snacks</a></li>
             <li><a th:href="@{/sauzen}">Sauzen</a></li>
             <li><a th:href="@{/taal}">Taal</a></li>
             <li><a th:href="@{/sauzen/alfabet}">Alfabet</a></li>
@@ -19,5 +20,11 @@
         <ul th:each="ingredient : *{ingredienten}">
             <li th:text="${ingredient}"></li>
         </ul>
+    </ul>
+
+    <ul th:fragment="snackLijst(snacks)" th:each="snack : ${snacks}" th:object="${snack}">
+        <li>
+            <p th:text="|*{naam} *{prijs}|"></p>
+        </li>
     </ul>
 </div>
