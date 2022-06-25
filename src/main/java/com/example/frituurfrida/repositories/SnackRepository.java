@@ -44,11 +44,11 @@ public class SnackRepository {
 
     public void update(Snack snack) {
         var sql = """
-                update pizzas
-                set naam = ?, prijs = ?, pikant = ?
+                update snacks
+                set naam = ?, prijs = ?
                 where id = ?
                 """;
-        if (template.update(sql, snack.getNaam(), snack.getPrijs()) == 0) {
+        if (template.update(sql, snack.getNaam(), snack.getPrijs(), snack.getNummer()) == 0) {
             throw new SnackRepositoryException("Snack is niet gevonden");
         }
     }
