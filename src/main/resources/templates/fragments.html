@@ -21,10 +21,4 @@
             <li th:text="${ingredient}"></li>
         </ul>
     </ul>
-
-    <ul th:fragment="snackLijst(snacks)" th:each="snack : ${snacks}" th:object="${snack}">
-        <li>
-            <p th:text="|*{naam} *{prijs}|"></p>
-        </li>
-    </ul>
 </div>

@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class SausController {
     private final SausService sausService;
     private final char[] alfabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    //private final SausService sausService = new SausService(new CSVSausRepository());
     public SausController(SausService sausService){
         this.sausService = sausService;
     }

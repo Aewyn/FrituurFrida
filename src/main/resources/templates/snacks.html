@@ -3,8 +3,21 @@
 <head th:replace="fragments::head(title='Snacks')"></head>
 <body>
 <nav th:replace="fragments::menu"></nav>
-<h1>Onze snacks:</h1>
-<ul th:replace="fragments::snackLijst(snacks = ${alleSnacks})"></ul>
+<h1>Snacks:</h1>
+<ul class="naastMekaar">
+    <li th:each="eenLetter : ${alfabet}">
+        <a th:href="@{/snacks/{letter}(letter=${eenLetter})}"
+           th:text="${eenLetter}">
+        </a></li>
+</ul>
 
+<th:block th:if="${letter}">
+    <h2>Snacks die beginnen met
+        <th:block th:text="${letter}"></th:block>
+    </h2>
+    <ul>
+        <li th:each="snack : ${snacks}" th:text="${snack.naam}"></li>
+    </ul>
+</th:block>
 </body>
 </html>
