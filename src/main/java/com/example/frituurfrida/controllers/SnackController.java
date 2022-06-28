@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("snacks")
 public class SnackController {
@@ -34,7 +36,7 @@ public class SnackController {
     }
 
     @GetMapping("/zoekopletter")
-    public ModelAndView findByBeginNaam(ZoekOpLetterForm form, Errors errors){
+    public ModelAndView findByBeginNaam(@Valid ZoekOpLetterForm form, Errors errors){
         var modelAndView = new ModelAndView("zoekopletter");
         if(errors.hasErrors()){
             return modelAndView;
