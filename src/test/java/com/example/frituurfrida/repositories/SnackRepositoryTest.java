@@ -53,4 +53,5 @@ class SnackRepositoryTest  extends AbstractTransactionalJUnit4SpringContextTests
     void findByBeginNaam() {
         assertThat(repository.findByBeginNaam("snack")).isNotEmpty();
     }
+
 }

@@ -26,4 +26,8 @@ public class SnackController {
         return new ModelAndView("snacks", "alfabet", alfabet)
                 .addObject("snacks", snackService.findByBeginNaam(letter));
     }
+    @GetMapping("/aantalverkochtesnacks")
+    private ModelAndView findAantalVerkochteSnacks(){
+        return new ModelAndView("aantalverkochtesnacks", "aantalVerkochteSnacks",snackService.findAantalVerkochteSnacks());
+    }
 }

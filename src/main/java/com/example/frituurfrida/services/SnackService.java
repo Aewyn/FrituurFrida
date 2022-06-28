@@ -1,5 +1,6 @@
 package com.example.frituurfrida.services;
 
+import com.example.frituurfrida.domain.AantalVerkochteSnacks;
 import com.example.frituurfrida.domain.Snack;
 import com.example.frituurfrida.repositories.SnackRepository;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,9 @@ public class SnackService {
 
     public List<Snack> findByBeginNaam(String beginNaam){
         return snackRepository.findByBeginNaam(beginNaam);
+    }
+
+    public List<AantalVerkochteSnacks> findAantalVerkochteSnacks(){
+        return snackRepository.findAantalVerkochteSnacks();
     }
 }

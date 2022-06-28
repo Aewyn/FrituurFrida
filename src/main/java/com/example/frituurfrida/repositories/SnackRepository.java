@@ -1,5 +1,6 @@
 package com.example.frituurfrida.repositories;
 
+import com.example.frituurfrida.domain.AantalVerkochteSnacks;
 import com.example.frituurfrida.domain.Snack;
 import com.example.frituurfrida.exception.SnackRepositoryException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
@@ -61,5 +62,18 @@ public class SnackRepository {
                 order by naam
                 """;
         return template.query(sql, snackMapper, beginNaam + '%');
+    }
+
+    public List<AantalVerkochteSnacks> findAantalVerkochteSnacks(){
+        var sql = """
+                select id, naam, ifnull(sum(dagverkopen.aantal),0) as 'aantal'
+                from snacks
+                left join dagverkopen on snacks.id = dagverkopen.snackId
+                group by id
+                order by id
+                """;
+        RowMapper<AantalVerkochteSnacks> mapper = (rs, rowNum) ->
+                new AantalVerkochteSnacks(rs.getLong("id"), rs.getString("naam"),rs.getInt("aantal"));
+        return template.query(sql, mapper);
     }
 }
