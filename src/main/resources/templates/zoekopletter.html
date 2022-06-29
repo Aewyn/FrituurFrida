@@ -5,7 +5,7 @@
 <nav th:replace="fragments::menu"></nav>
 <h1>Zoek Op Letter</h1>
 <form th:object="${zoekOpLetterForm}" method="get" th:action="@{/snacks/zoekopletter}">
-    <label>Letter:<span th:errors="*{beginLetter}"></span><input th:field="*{beginLetter}" autofocus></label>
+    <label>Letter:<span th:errors="*{beginLetter}"></span><input th:field="*{beginLetter}" autofocus required type="text" maxlength="1" pattern="[a-zA-Z]"></label>
     <button>Zoeken</button>
 </form>
 <th:block th:if="${snacksMetLetter}">
