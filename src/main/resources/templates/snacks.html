@@ -3,6 +3,7 @@
 <head th:replace="fragments::head(title='Snacks')"></head>
 <body>
 <nav th:replace="fragments::menu"></nav>
+<div th:if="${param.idGewijzigdeSnack}" class="boodschap">Snack is gewijzigd. SnackId: <th:block th:text="${param.idGewijzigdeSnack}"></th:block>.</div>
 <h1>Snacks:</h1>
 <ul class="naastMekaar">
     <li th:each="eenLetter : ${alfabet}">
