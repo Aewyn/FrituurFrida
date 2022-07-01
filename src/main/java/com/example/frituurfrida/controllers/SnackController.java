@@ -1,6 +1,6 @@
 package com.example.frituurfrida.controllers;
 
-import com.example.frituurfrida.controllers.forms.ZoekOpLetterForm;
+import com.example.frituurfrida.forms.ZoekOpLetterForm;
 import com.example.frituurfrida.domain.Snack;
 import com.example.frituurfrida.services.SnackService;
 import org.springframework.stereotype.Controller;

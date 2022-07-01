@@ -1,4 +1,4 @@
-package com.example.frituurfrida.controllers.forms;
+package com.example.frituurfrida.forms;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
