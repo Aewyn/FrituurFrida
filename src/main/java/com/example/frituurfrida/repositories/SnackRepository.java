@@ -57,7 +57,7 @@ public class SnackRepository {
     public List<Snack> findByBeginNaam(String beginNaam) {
         var sql = """
                 select id, naam, prijs
-                from snacks 
+                from snacks 0
                 where naam like ?
                 order by naam
                 """;
